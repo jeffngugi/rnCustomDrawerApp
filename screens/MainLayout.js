@@ -1,11 +1,19 @@
 import React from 'react';
 import {
     View,
-    Text
+    Text,
+    TouchableOpacity,
+    TouchableWithoutFeedback,
+    Image,
+    FlatList
 } from 'react-native';
-import Animated from 'react-native-reanimated'
+import Animated, {useSharedValue, useAnimatedStyle, withTiming} from 'react-native-reanimated'
+import {connect } from 'react-redux'
+import { setSelectedTab } from '../stores/tab/tabAction'
+import {Home, Search, CartTab, Favourite, Notification} from '../screens'
+import {COLORS, FONTS, SIZES, icons, images, dummyData} from '../constants'
 
-const MainLayout = ({drawerAnimationStyle}) => {
+const MainLayout = ({drawerAnimationStyle }) => {
     return (
         <Animated.View
             style={{
@@ -16,9 +24,12 @@ const MainLayout = ({drawerAnimationStyle}) => {
                 ...drawerAnimationStyle
             }}
         >
+            {/* Header */}
+            {/* Content */}
             <Text>MainLayout</Text>
+            {/* Footer */}
         </Animated.View>
     )
 }
 
-export default MainLayout;
+export default MainLayout
